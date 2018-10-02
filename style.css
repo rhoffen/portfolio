@@ -2,7 +2,7 @@ html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-size: 16px;
-  font-family: serif;
+  font-family: Arial, sans-serif;
   text-decoration: none;
   min-height: 100%;
   color: white;
@@ -31,9 +31,10 @@ body {
   max-height: 100vh;
   display: grid;
   grid-template-columns: 15fr 35fr 15fr 35fr;
-  grid-template-rows: 10vh repeat(3, 33fr) 10vh;
+  grid-template-rows: 10vh 10vh repeat(3, 33fr) 5vh;
   grid-template-areas:
     "header header header header"
+    ". react-col-head . site-col-head"
     "react-title1 react-screen1 site-title1 site-screen1"
     "react-title2 react-screen2 site-title2 site-screen2"
     ". . site-title3 site-screen3"
@@ -49,6 +50,24 @@ body {
   font-size: 3rem;
   grid-area: header;
   margin: auto;
+  padding-top: 1.5rem;
+}
+
+.page-title,
+.col-head {
+  font-family: 'Days One', sans-serif;
+}
+
+.col-head {
+  font-size: 2.25rem;
+}
+
+.react.col-head {
+  grid-area: react-col-head;
+}
+
+.site.col-head {
+  grid-area: site-col-head;
 }
 
 .title {
@@ -64,6 +83,9 @@ body {
   height: auto;
   overflow: hidden;
   }
+
+.screenshot {
+}
 
 img {
   display: block;
@@ -114,5 +136,8 @@ img {
 
 footer {
   grid-area: footer;
-  margin: auto;
+  border-top: 1px solid white;
+  padding-top: 0.5rem;
+  display: flex;
+  justify-content: space-between;
 }
