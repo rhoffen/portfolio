@@ -1,0 +1,103 @@
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 16px;
+  font-family: serif;
+  text-decoration: none;
+  min-height: 100%;
+}
+
+*, *:before, *:after {
+-webkit-box-sizing: inherit;
+        box-sizing: inherit;
+}
+
+html,
+body {
+  display: flex;
+  position: relative;
+  justify-content: center;
+}
+
+body {
+  max-height: 100vh
+}
+
+.container {
+  margin: auto;
+  max-width: 960px;
+  max-height: 100vh;
+  display: grid;
+  grid-template-columns: 15fr 35fr 15fr 35fr;
+  grid-template-rows: 10vh repeat(3, 33fr) 10vh;
+  grid-template-areas:
+    "header header header header"
+    "react-title1 react-screen1 site-title1 site-screen1"
+    "react-title2 react-screen2 site-title2 site-screen2"
+    ". . site-title3 site-screen3"
+    ". . site-title4 site-screen4"
+    "footer footer footer footer";
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+}
+
+.title {
+  grid-area: header;
+  margin: auto;
+}
+
+.title,
+.screenshot {
+  max-width: 100%;
+  min-width: 0;
+  max-height: 100%;
+  height: auto;
+  overflow: hidden;
+  }
+
+/*React project 1*/
+.react-1.title {
+  grid-area: react-title1
+}
+
+.react-1.screenshot {
+  grid-area: react-screen1
+}
+/*React project 2*/
+.react-2.title {
+  grid-area: react-title2
+}
+
+.react-2.screenshot {
+  grid-area: react-screen2
+}
+/*Website 1*/
+.website-1.title {
+  grid-area: site-title1
+}
+
+.website-1.screenshot {
+  grid-area: site-screen1
+}
+/*Website 2*/
+.website-2.title {
+  grid-area: site-title2
+}
+
+.website-2.screenshot {
+  grid-area: site-screen2
+}
+/*Website 3*/
+.website-3.title {
+  grid-area: site-title3
+}
+
+.website-3.screenshot {
+  grid-area: site-screen3
+}
+
+footer {
+  grid-area: footer;
+  margin: auto;
+}
