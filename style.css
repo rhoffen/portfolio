@@ -81,10 +81,11 @@ body {
   min-width: 0;
   max-height: 100%;
   height: auto;
-  overflow: hidden;
+  /*overflow: hidden;*/
   }
 
 .screenshot {
+  position: relative;
 }
 
 img {
@@ -93,6 +94,26 @@ img {
   height: auto;
 }
 
+.screenshot .description {
+  display: none;
+}
+
+.screenshot:hover .description{
+  display: block;
+  background-color: black;
+  position: absolute;
+  left: 3rem;
+  top: -1rem;
+  border: 2px solid white;
+  z-index: 2;
+  padding: 0.5rem;
+  line-height: 1.3;
+}
+
+.description a {
+  color: yellow;
+  text-decoration: underline;
+}
 /*React project 1*/
 .react-1.title {
   grid-area: react-title1
