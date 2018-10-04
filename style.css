@@ -32,7 +32,7 @@ body {
   /*max-height: 100vh;*/
   display: grid;
   grid-template-columns: 12fr 35fr 6fr 35fr 12fr;
-  grid-template-rows: 17vh 5vh repeat(3, 33fr) 5vh;
+  grid-template-rows: 14vh 5vh repeat(3, 25fr) 6vh;
   grid-template-areas:
     "header header header header header"
     ". react-col-head . site-col-head ."
