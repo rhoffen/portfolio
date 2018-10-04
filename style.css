@@ -28,7 +28,8 @@ body {
 .container {
   margin: auto;
   max-width: 960px;
-  max-height: 100vh;
+  min-height: 100vh; /*added*/
+  /*max-height: 100vh;*/
   display: grid;
   grid-template-columns: 15fr 35fr 15fr 35fr;
   grid-template-rows: 10vh 10vh repeat(3, 33fr) 5vh;
@@ -38,12 +39,12 @@ body {
     "react-title1 react-screen1 site-title1 site-screen1"
     "react-title2 react-screen2 site-title2 site-screen2"
     ". . site-title3 site-screen3"
-    ". . site-title4 site-screen4"
+    /*". . site-title4 site-screen4"*/
     "footer footer footer footer";
   grid-row-gap: 1rem;
   align-items: center;
-  min-width: 0;
-  min-height: 0;
+  /*min-width: 0;
+  min-height: 0;*/
 }
 
 .page-title {
