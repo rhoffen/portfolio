@@ -48,6 +48,7 @@ body {
   grid-area: header;
   margin: auto;
   padding-top: 1.5rem;
+  text-align: center;
 }
 
 .page-title.medium {
@@ -174,6 +175,22 @@ footer {
 }
 
 /*Media queries*/
+/*iPad in landscape*/
+@media only screen and (max-width: 1024px) {
+  .container {
+    grid-template-rows: 19vh 5vh auto auto auto 6vh;
+  }
+  .screenshot:hover .description {
+    width: 22rem;
+    left: 0;
+    top: 1.5rem;
+  }
+
+  .screenshot:hover .site.description {
+    left: 0;
+  }
+}
+
 @media only screen and (max-width: 990px) {
   html,
   body,
@@ -209,7 +226,20 @@ footer {
     line-height: 1.2;
   }
 
+  .col-head {
+    padding-top: 2rem;
+  }
+
+  .title,
+  .site.title {
+    text-align: center;
+    padding-top: 1.75rem;
+    font-size: 1.5rem;
+  }
+
+
   footer {
+    margin-top: 0.5rem;
     padding: 0.5rem;
   }
 }
@@ -236,8 +266,31 @@ footer {
       "footer"
   }
 
+  /*.col-head {
+    padding-top: 2rem;
+  }
+
+  .title,
+  .site.title {
+    text-align: center;
+    padding-top: 1.75rem;
+    font-size: 1.5rem;
+  }*/
+
   img {
     width: 100%;
     max-height: 20rem;
   }
+
+  .screenshot:hover .description {
+    width: 75%;
+    left: 12.5%;
+    top: 1.5rem;
+    font-size: 1.25rem;
+  }
+
+  .screenshot:hover .site.description {
+    left: 12.5%;
+  }
+
 }
