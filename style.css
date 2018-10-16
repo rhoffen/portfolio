@@ -28,18 +28,20 @@ body {
 .container {
   display: grid;
   margin: auto;
-  max-width: 960px;
+  padding: 0 2rem;
+  /*max-width: 960px;*/
   height: 100vh; /*added*/
-  grid-row-gap: 1rem;
-  grid-template-columns: auto auto 8% auto auto;
-  grid-template-rows: 14vh 5vh auto auto auto 6vh;
+  /*grid-row-gap: 0;*/
+  grid-column-gap: 1.5rem;
+  grid-template-columns: repeat(7,auto);
+  grid-template-rows: 15vh auto auto auto auto 6vh;
   grid-template-areas:
-    "header header header header header"
-    ". react-col-head . site-col-head ."
-    "react-title1 react-screen1 . site-screen1 site-title1"
-    "react-title2 react-screen2 . site-screen2 site-title2 "
-    ". . . site-screen3 site-title3"
-    "footer footer footer footer footer";.
+    "header header header header header header header"
+    " . . react-title1 react-title1 react-title2 react-title2 ."
+    " . react-col-head react-screen1 react-screen1 react-screen2 react-screen2 ."
+    " . site-title1 site-title1 site-title2 site-title2 site-title3 site-title3"
+    "site-col-head site-screen1 site-screen1 site-screen2 site-screen2 site-screen3 site-screen3"
+    "footer footer footer footer footer footer footer";
   align-items: center;
 }
 
@@ -74,14 +76,16 @@ body {
 }
 
 .title {
-  text-align: right;
-  padding-right: 10px;
+  text-align: center;
+  /*padding-right: 10px;*/
+  align-self: flex-end;
+  font-size: 1.25rem;
 }
 
-.site.title {
+/*.site.title {
   text-align: left;
   padding-left: 10px;
-}
+}*/
 
 .title,
 .screenshot {
@@ -100,17 +104,21 @@ img {
   height: auto;
 }
 
+.website-1.screenshot img {
+  min-height: 100%;
+}
+
 .screenshot .description {
   display: none;
 }
 
 .screenshot:hover .description{
   display: block;
-  width: 30rem;
+  width: 18rem;
   background-color: #252525;
   position: absolute;
   right: 3rem;
-  top: -1rem;
+  top: 1rem;
   border: 2px solid #ebebeb;
   z-index: 2;
   padding: 0.5rem;
