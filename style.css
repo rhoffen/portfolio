@@ -29,17 +29,15 @@ body {
   display: grid;
   margin: auto;
   padding: 0 2rem;
-  /*max-width: 960px;*/
-  height: 100vh; /*added*/
-  /*grid-row-gap: 0;*/
+  height: 100vh;
   grid-column-gap: 1.5rem;
-  grid-template-columns: repeat(7,auto);
+  grid-template-columns: auto repeat(6,1fr);
   grid-template-rows: 15vh auto auto auto auto 6vh;
   grid-template-areas:
     "header header header header header header header"
-    " . . react-title1 react-title1 react-title2 react-title2 ."
+    ". . . . . . ."
     " . react-col-head react-screen1 react-screen1 react-screen2 react-screen2 ."
-    " . site-title1 site-title1 site-title2 site-title2 site-title3 site-title3"
+    ". . . . . . ."
     "site-col-head site-screen1 site-screen1 site-screen2 site-screen2 site-screen3 site-screen3"
     "footer footer footer footer footer footer footer";
   align-items: center;
@@ -75,23 +73,22 @@ body {
   grid-area: site-col-head;
 }
 
-.title {
+/*.title {
   text-align: center;
-  /*padding-right: 10px;*/
   align-self: flex-end;
   font-size: 1.25rem;
-}
+}*/
 
 /*.site.title {
   text-align: left;
   padding-left: 10px;
 }*/
 
-.title,
+/*.title,*/
 .screenshot {
   max-width: 100%;
   min-width: 0;
-  height: auto;
+  height: stretch;
   }
 
 .screenshot {
@@ -99,13 +96,7 @@ body {
 }
 
 img {
-  display: block;
   width: 100%;
-  height: auto;
-}
-
-.website-1.screenshot img {
-  min-height: 100%;
 }
 
 .screenshot .description {
@@ -117,7 +108,8 @@ img {
   width: 18rem;
   background-color: #252525;
   position: absolute;
-  right: 3rem;
+  /*right: 3rem;*/
+  left: 20%;
   top: 1rem;
   border: 2px solid #ebebeb;
   z-index: 2;
@@ -134,41 +126,41 @@ img {
   text-decoration: underline;
 }
 /*React project 1*/
-.react-1.title {
+/*.react-1.title {
   grid-area: react-title1
-}
+}*/
 
 .react-1.screenshot {
   grid-area: react-screen1
 }
 /*React project 2*/
-.react-2.title {
+/*.react-2.title {
   grid-area: react-title2
-}
+}*/
 
 .react-2.screenshot {
   grid-area: react-screen2
 }
 /*Website 1*/
-.website-1.title {
+/*.website-1.title {
   grid-area: site-title1
-}
+}*/
 
 .website-1.screenshot {
   grid-area: site-screen1
 }
 /*Website 2*/
-.website-2.title {
+/*.website-2.title {
   grid-area: site-title2
-}
+}*/
 
 .website-2.screenshot {
   grid-area: site-screen2
 }
 /*Website 3*/
-.website-3.title {
+/*.website-3.title {
   grid-area: site-title3
-}
+}*/
 
 .website-3.screenshot {
   grid-area: site-screen3
@@ -188,6 +180,7 @@ footer {
   .container {
     grid-template-rows: 19vh 5vh auto auto auto 6vh;
   }
+  
   .screenshot:hover .description {
     width: 22rem;
     left: 0;
