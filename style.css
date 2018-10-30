@@ -86,18 +86,6 @@ body {
   grid-area: site-col-head;
 }
 
-/*.title {
-  text-align: center;
-  align-self: flex-end;
-  font-size: 1.25rem;
-}*/
-
-/*.site.title {
-  text-align: left;
-  padding-left: 10px;
-}*/
-
-/*.title,*/
 .screenshot {
   max-width: 100%;
   min-width: 0;
@@ -121,7 +109,6 @@ img {
   width: 18rem;
   background-color: #252525;
   position: absolute;
-  /*right: 3rem;*/
   left: 20%;
   top: 1rem;
   border: 2px solid #ebebeb;
@@ -138,42 +125,26 @@ img {
   color: #e5c454;
   text-decoration: underline;
 }
-/*React project 1*/
-/*.react-1.title {
-  grid-area: react-title1
-}*/
+
+/*React projects*/
 
 .react-1.screenshot {
   grid-area: react-screen1
 }
-/*React project 2*/
-/*.react-2.title {
-  grid-area: react-title2
-}*/
 
 .react-2.screenshot {
   grid-area: react-screen2
 }
-/*Website 1*/
-/*.website-1.title {
-  grid-area: site-title1
-}*/
+
+/*Websites*/
 
 .website-1.screenshot {
   grid-area: site-screen1
 }
-/*Website 2*/
-/*.website-2.title {
-  grid-area: site-title2
-}*/
 
 .website-2.screenshot {
   grid-area: site-screen2
 }
-/*Website 3*/
-/*.website-3.title {
-  grid-area: site-title3
-}*/
 
 .website-3.screenshot {
   grid-area: site-screen3
@@ -194,22 +165,6 @@ footer {
     grid-template-rows: 19vh 1vh 1fr 1vh 1fr 6vh;
   }
 
-  .site.col-head,
-  .website-1,
-  .website-2,
-  .website-3 {
-    align-self: flex-start;
-  }
-
-  .site.col-head {
-    padding-top: 33%;
-  }
-
-  #zen {
-    /*max-height: 127.58px;*/
-    /*max-width: 219.13px;*/
-  }
-
   .screenshot:hover .description {
     width: 11rem;
     left: 0;
@@ -221,6 +176,7 @@ footer {
   }
 }
 
+/*Targets iPad Pro in portrait and screens up to 990px*/
 @media only screen and (max-width: 1024px) and (orientation: portrait),
 only screen and (max-width: 990px) {
   html,
@@ -235,16 +191,12 @@ only screen and (max-width: 990px) {
     grid-column-gap: 2.5rem;
     grid-row-gap: 1rem;
     grid-template-columns: 50% 50%;
-    /*grid-template-rows: auto auto auto 247.75px auto 247.75px auto 247.75px auto;*/
     grid-template-rows: auto auto repeat(3, 1fr) auto;
     grid-template-areas:
       "header header"
       "react-col-head site-col-head"
-      /*". . ."*/
       "react-screen1 site-screen1"
-      /*". . ."*/
       "react-screen2 site-screen2"
-      /*". . ."*/
       ". site-screen3"
       "footer footer";
   }
@@ -268,18 +220,6 @@ only screen and (max-width: 990px) {
     padding-top: 2rem;
   }
 
-  .screenshot,
-  img {
-    /*object-fit: cover;*/
-    /*width: 436.2px;*/
-    /*height: 251px*/
-  }
-
-  /*.react-1,
-  .react-2 {
-    height: 251px;
-  }*/
-
   .site.col-head,
   .website-1,
   .website-2,
@@ -290,13 +230,6 @@ only screen and (max-width: 990px) {
   .site.col-head {
     padding-top: 2rem;
   }
-
-  /*.title,
-  .site.title {
-    text-align: center;
-    padding-top: 1.75rem;
-    font-size: 1.5rem;
-  }*/
 
   .screenshot:hover .description {
     left: 1rem;
@@ -330,17 +263,6 @@ only screen and (max-width: 990px) {
       "footer"
   }
 
-  /*.col-head {
-    padding-top: 2rem;
-  }
-
-  .title,
-  .site.title {
-    text-align: center;
-    padding-top: 1.75rem;
-    font-size: 1.5rem;
-  }*/
-
   img {
     width: 100%;
     max-height: 20rem;
@@ -350,7 +272,6 @@ only screen and (max-width: 990px) {
     width: 75%;
     left: 12.5%;
     top: 1.5rem;
-    /*font-size: 1.25rem;*/
     font-size: 1rem;
   }
 
