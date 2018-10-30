@@ -63,7 +63,8 @@ body {
   text-align: center;
 }
 
-.page-title.medium {
+.page-title.medium,
+.react.col-head.medium {
   display: none;
 }
 
@@ -220,8 +221,8 @@ footer {
   }
 }
 
-/*@media only screen and (max-width: 1024px) and (orientation: portrait),*/
-@media only screen and (max-width: 990px) {
+@media only screen and (max-width: 1024px) and (orientation: portrait),
+only screen and (max-width: 990px) {
   html,
   body,
   .container {
@@ -250,6 +251,10 @@ footer {
 
   .widest {
     display: none;
+  }
+
+  .react.col-head.medium {
+    display: block;
   }
 
   .page-title.medium {
@@ -293,6 +298,9 @@ footer {
     font-size: 1.5rem;
   }*/
 
+  .screenshot:hover .description {
+    left: 1rem;
+  }
 
   footer {
     margin-top: 0.5rem;
