@@ -32,7 +32,7 @@ body {
   height: 100vh;
   grid-column-gap: 2rem;
   grid-template-columns: auto repeat(6,1fr);
-  grid-template-rows: 15vh auto auto auto auto 6vh;
+  grid-template-rows: 15vh 0 auto 0 auto 6vh;
   grid-template-areas:
     "header header header header header header header"
     ". . . . . . ."
@@ -42,6 +42,18 @@ body {
     "footer footer footer footer footer footer footer";
   align-items: center;
 }
+
+.site.col-head,
+.website-1,
+.website-2,
+.website-3 {
+  align-self: flex-start;
+}
+
+.site.col-head {
+  padding-top: 33%;
+}
+
 
 .page-title {
   font-size: 3rem;
@@ -208,6 +220,7 @@ footer {
   }
 }
 
+/*@media only screen and (max-width: 1024px) and (orientation: portrait),*/
 @media only screen and (max-width: 990px) {
   html,
   body,
