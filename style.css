@@ -22,22 +22,28 @@ body {
 }
 
 body {
-  max-height: 100vh
+  /*display: flex;*/
+  /*flex-direction: column;*/
+  height: 100%;
+  /*overflow: scroll;*/
 }
 
 .container {
   display: grid;
   margin: auto;
   padding: 0 2rem;
-  height: 100vh;
+  height: 100%;
   grid-column-gap: 2rem;
+  grid-row-gap: 3rem;
   grid-template-columns: auto repeat(6,1fr);
-  grid-template-rows: 15vh 0 auto 0 auto 6vh;
+  grid-template-rows: 15vh auto auto auto 6vh;
   grid-template-areas:
     "header header header header header header header"
-    ". . . . . . ."
+    /*". . . . . . ."*/
+    " . . full-col-head full-screen1 full-screen1 . . "
+    /*". . . . . . ."*/
     " . react-col-head react-screen1 react-screen1 react-screen2 react-screen2 ."
-    ". . . . . . ."
+    /*". . . . . . ."*/
     "site-col-head site-screen1 site-screen1 site-screen2 site-screen2 site-screen3 site-screen3"
     "footer footer footer footer footer footer footer";
   align-items: center;
@@ -63,6 +69,8 @@ body {
   text-align: center;
 }
 
+.full.medium,
+.full.med-wide,
 .page-title.medium,
 .react.col-head.medium {
   display: none;
@@ -76,6 +84,10 @@ body {
 .col-head {
   font-size: 2rem;
   text-align: center;
+}
+
+.full.col-head {
+  grid-area: full-col-head;
 }
 
 .react.col-head {
@@ -125,7 +137,11 @@ img {
   color: #e5c454;
   text-decoration: underline;
 }
+/*Full-stack projects*/
 
+.full-1.screenshot {
+  grid-area: full-screen1;
+}
 /*React projects*/
 
 .react-1.screenshot {
@@ -162,7 +178,15 @@ footer {
 /*iPad in landscape*/
 @media only screen and (max-width: 1024px) {
   .container {
-    grid-template-rows: 19vh 1vh 1fr 1vh 1fr 6vh;
+    /*grid-template-rows: 19vh 1vh 1fr 1vh 1fr 1vh 1fr 6vh;*/
+  }
+
+  .full.widest {
+    display: none;
+  }
+
+  .full.med-wide {
+    display: block;
   }
 
   .screenshot:hover .description {
@@ -186,25 +210,34 @@ only screen and (max-width: 990px) {
   }
 
   .container {
-    max-width: 98%;
+    width: 100vw;
+    height: 100vh;
     justify-content: center;
-    grid-column-gap: 2.5rem;
-    grid-row-gap: 1rem;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: auto auto repeat(3, 1fr) auto;
+    align-content: center;
+    /*grid-column-gap: 2.5rem;*/
+    /*grid-row-gap: 1rem;*/
+    /*grid-template-columns: repeat(4,20min);*/
+    grid-template-rows: 100%;
+    grid-template-columns: 100%;
+    /*grid-template-rows: repeat(9, 11.1min);*/
     grid-template-areas:
-      "header header"
-      "react-col-head site-col-head"
-      "react-screen1 site-screen1"
-      "react-screen2 site-screen2"
-      ". site-screen3"
-      "footer footer";
+      "header"
+      /*"full-col-head full-col-head full-col-head full-col-head"
+      ". full-screen1 full-screen1 . "
+      ". react-col-head react-col-head ."
+      "react-screen1 react-screen1 react-screen2 react-screen2"
+      ". site-col-head site-col-head ."
+      ". site-screen1 site-screen1 site-screen2 site-screen2"
+      ". site-screen3 site-screen3 ."
+      "footer footer footer footer";*/
   }
 
-  .widest {
+  .widest,
+  .full.med-wide {
     display: none;
   }
 
+  .full.col-head.medium,
   .react.col-head.medium {
     display: block;
   }
@@ -248,6 +281,8 @@ only screen and (max-width: 990px) {
     grid-template-rows: minmax(auto, 20rem);
     grid-template-areas:
       "header"
+      "full-col-head"
+      "full screen1"
       "react-col-head"
       "react-title1"
       "react-screen1"
