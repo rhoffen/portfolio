@@ -22,10 +22,7 @@ body {
 }
 
 body {
-  /*display: flex;*/
-  /*flex-direction: column;*/
   height: 100%;
-  /*overflow: scroll;*/
 }
 
 .container {
@@ -39,11 +36,8 @@ body {
   grid-template-rows: 15vh auto auto auto 6vh;
   grid-template-areas:
     "header header header header header header header"
-    /*". . . . . . ."*/
     " . . full-col-head full-screen1 full-screen1 . . "
-    /*". . . . . . ."*/
     " . react-col-head react-screen1 react-screen1 react-screen2 react-screen2 ."
-    /*". . . . . . ."*/
     "site-col-head site-screen1 site-screen1 site-screen2 site-screen2 site-screen3 site-screen3"
     "footer footer footer footer footer footer footer";
   align-items: center;
@@ -177,9 +171,6 @@ footer {
 /*Media queries*/
 /*iPad in landscape*/
 @media only screen and (max-width: 1024px) {
-  .container {
-    /*grid-template-rows: 19vh 1vh 1fr 1vh 1fr 1vh 1fr 6vh;*/
-  }
 
   .full.widest {
     display: none;
@@ -213,23 +204,19 @@ only screen and (max-width: 990px) {
     width: 100vw;
     height: 100vh;
     justify-content: center;
-    align-content: center;
-    /*grid-column-gap: 2.5rem;*/
-    /*grid-row-gap: 1rem;*/
-    /*grid-template-columns: repeat(4,20min);*/
-    grid-template-rows: 100%;
-    grid-template-columns: 100%;
-    /*grid-template-rows: repeat(9, 11.1min);*/
+    align-content: start;
+    grid-template-rows: 20vh auto auto;
+    grid-template-columns: repeat(4, 1fr);
     grid-template-areas:
-      "header"
-      /*"full-col-head full-col-head full-col-head full-col-head"
-      ". full-screen1 full-screen1 . "
+      "header header header header"
+      ". full-col-head full-col-head ."
+      ". full-screen1 full-screen1 ."
       ". react-col-head react-col-head ."
       "react-screen1 react-screen1 react-screen2 react-screen2"
       ". site-col-head site-col-head ."
-      ". site-screen1 site-screen1 site-screen2 site-screen2"
+      "site-screen1 site-screen1 site-screen2 site-screen2"
       ". site-screen3 site-screen3 ."
-      "footer footer footer footer";*/
+      "footer footer footer footer";
   }
 
   .widest,
@@ -277,30 +264,25 @@ only screen and (max-width: 990px) {
 @media only screen and (max-width:800px) {
   .container {
     max-width: 100%;
-    grid-template-columns: minmax(min-content, 33.8rem);
+    grid-template-columns: 100%;
     grid-template-rows: minmax(auto, 20rem);
     grid-template-areas:
       "header"
       "full-col-head"
-      "full screen1"
+      "full-screen1"
       "react-col-head"
-      "react-title1"
       "react-screen1"
-      "react-title2"
       "react-screen2"
       "site-col-head"
-      "site-title1"
       "site-screen1"
-      "site-title2"
       "site-screen2"
-      "site-title3"
       "site-screen3"
-      "footer"
+      "footer";
   }
 
   img {
     width: 100%;
-    max-height: 20rem;
+    height: auto;
   }
 
   .screenshot:hover .description {
