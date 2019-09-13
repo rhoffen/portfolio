@@ -58,7 +58,6 @@ body {
 .page-title {
   font-size: 3rem;
   grid-area: header;
-  margin: auto;
   padding-top: 1.5rem;
   text-align: center;
 }
@@ -111,7 +110,7 @@ img {
 }
 
 .screenshot:hover .description{
-  display: block;
+  display: inline-block;
   width: 18rem;
   background-color: #252525;
   position: absolute;
